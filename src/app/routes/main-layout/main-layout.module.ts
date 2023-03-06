@@ -7,11 +7,13 @@ import { HeaderComponent } from './header/header.component';
 import { MainLayoutRoutingModule } from './main-layout-routing.module';
 import { MainLayoutComponent } from './main-layout.component';
 import { HomeComponent } from '../home/home.component';
+import { ProductsComponent } from '../products/products.component';
 
 @NgModule({
   declarations: [
     MainLayoutComponent,
     HomeComponent,
+    ProductsComponent,
     HeaderComponent,
     FooterComponent,
   ],

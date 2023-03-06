@@ -1,0 +1,8 @@
+<app-main-layout>
+  <h1>Products</h1>
+  <section>
+    <div *ngFor="let product of products$ | async">
+      <app-product-card [product]="product"></app-product-card>
+    </div>
+  </section>
+</app-main-layout>
