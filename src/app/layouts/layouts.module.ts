@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { HomeComponent } from 'app/pages/home/home.component';
+import { HomeComponent } from 'app/routes/home/home.component';
 
 import { FooterComponent } from './primary-layout/footer/footer.component';
 import { HeaderComponent } from './primary-layout/header/header.component';
