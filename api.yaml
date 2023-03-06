@@ -1,0 +1,267 @@
+openapi: 3.0.0
+x-json-schema-faker:
+  useExamplesValue: true
+  useDefaultValue: true
+  optionalsProbability: 0.5
+  min-items: 20
+info:
+  title: Small Ecommerce API
+  version: 1.0.0
+  description: This API provides basic functionality for a small ecommerce application.
+servers:
+  - url: http://localhost:4010
+paths:
+  /products:
+    get:
+      summary: Get all products
+      description: Returns a list of all products available for sale
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+              examples:
+                products:
+                  value:
+                    - id: 1
+                      name: Product 1
+                      x-faker: name.firstName
+                      description: Description of product 1
+                      price: 10.99
+                      image: http://example.com/product1.jpg
+                    - id: 2
+                      name: Product 2
+                      description: Description of product 2
+                      price: 9.99
+                      image: http://example.com/product2.jpg
+                    - id: 3
+                      name: Product 3
+                      description: Description of product 3
+                      price: 14.99
+                      image: http://example.com/product3.jpg
+    post:
+      summary: Add a new product
+      description: Adds a new product to the ecommerce system
+      requestBody:
+        description: Product object to add
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+  /products/{productId}:
+    get:
+      summary: Get product by ID
+      description: Returns a product by its ID
+      parameters:
+        - in: path
+          name: productId
+          required: true
+          description: ID of the product to retrieve
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          description: Product not found
+      
+    put:
+      summary: Update product by ID
+      description: Updates an existing product by its ID
+      parameters:
+        - in: path
+          name: productId
+          required: true
+          description: ID of the product to update
+          schema:
+            type: integer
+      requestBody:
+        description: Product object to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          description: Product not found
+    delete:
+      summary: Delete product by ID
+      description: Deletes a product by its ID
+      parameters:
+        - in: path
+          name: productId
+          required: true
+          description: ID of the product to delete
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: No content
+        '404':
+          description: Product not found
+  /cart:
+    get:
+      summary: Get actual cart
+      description: Returns the actual cart
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+    post:
+      summary: Add a new item to the cart
+      description: Adds a new item to the cart
+      requestBody:
+        description: Cart item object to add
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CartItem'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CartItem'
+  /user:
+    get:
+      summary: Get user information
+      description: Returns the user information
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    put:
+      summary: Update user information
+      description: Updates the user information
+      requestBody:
+        description: User object to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+    
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    delete:
+      summary: Delete user information
+      description: Deletes the user information
+      responses:
+        '204':
+          description: No content
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+          x-faker: datatype.bigInt
+          description: Unique identifier for the product
+        name:
+          type: string
+          x-faker: commerce.product
+          description: Name of the product
+        slug:
+          type: string
+          description: Slug of the product
+        description:
+          type: string
+          description: Description of the product
+        price:
+          type: number
+          x-faker:
+            commerce.price: [0, 10]
+          format: float
+          description: Price of the product
+        image:
+          type: string
+          x-faker: image.imageUrl
+          format: uri
+          description: URL to the product image
+      required:
+        - name
+        - price
+    CartItem:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the cart item
+        product:
+          $ref: '#/components/schemas/Product'
+        quantity:
+          type: integer
+          description: Quantity of the product in the cart
+      required:
+        - product
+        - quantity
+    Cart:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the cart
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CartItem'
+        total:
+          type: number
+          format: float
+          description: Total price of the cart
+      required:
+        - items
+        - total
+    User:
+      type: object
+      properties:
+        name:
+          type: string
+          description: User name
+        email:
+          type: string
+          description: User email
+        address:
+          type: string
+          description: User address
+      required:
+        - name
+        - email
+        - address
