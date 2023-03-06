@@ -1,0 +1,9 @@
+<section class="container">
+  <ul class="row">
+    <li class="col" *ngFor="let product of products">
+      <div>
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+    </li>
+  </ul>
+</section>

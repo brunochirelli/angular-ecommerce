@@ -1,1 +1,12 @@
-<p>product-card works!</p>
+<div *ngIf="product">
+  <div>
+    <!-- <img [src]="product.image" [alt]="product.name" /> -->
+  </div>
+  <div>
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <div>
+      <span>{{ product.price | currency }}</span>
+    </div>
+  </div>
+</div>

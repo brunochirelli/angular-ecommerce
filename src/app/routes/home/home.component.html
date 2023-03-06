@@ -1,2 +1,5 @@
 <h1>Home</h1>
-<app-product-card></app-product-card>
+<section>
+  <h2>Featured Products</h2>
+  <app-products-carousel [products]="products$ | async"></app-products-carousel>
+</section>
