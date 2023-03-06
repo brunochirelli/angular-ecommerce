@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
+import { ProductCardComponent } from 'app/features/products/components/product-card/product-card.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [ProductCardComponent],
   imports: [],
-  exports: [],
+  exports: [ProductCardComponent],
 })
 export class SharedModule {}
