@@ -37,6 +37,17 @@ export class CartService {
   addToCart(product: Product) {
     const cart = this.cartSubject.getValue();
 
+    // Find if item is already in the cart
+    const productIndex = cart.products.findIndex(
+      (cartProduct) => cartProduct.id === product.id
+    );
+
+    if (productIndex !== -1) {
+      cart.products[productIndex].quantity += 1;
+      this.cartSubject.next(cart);
+      return;
+    }
+
     this.cartSubject.next({
       ...cart,
       products: [
