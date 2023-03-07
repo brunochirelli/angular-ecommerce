@@ -87,13 +87,20 @@ export class CartService {
     const productIndex = cart.products.findIndex(
       (cartProduct) => cartProduct.id === product.id
     );
+    const currentProduct = cart.products[productIndex];
+
+    if (currentProduct.quantity === 1 && quantity === 'remove') {
+      this.removeItem(currentProduct);
+      return;
+    }
 
     // Update the quantity of the product
     if (quantity === 'add') {
-      cart.products[productIndex].quantity += 1;
+      currentProduct.quantity += 1;
     }
+
     if (quantity === 'remove') {
-      cart.products[productIndex].quantity -= 1;
+      currentProduct.quantity -= 1;
     }
 
     // Update the cartSubject with new cart state
