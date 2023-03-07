@@ -8,10 +8,14 @@ import { Product } from './product.type';
   providedIn: 'root',
 })
 export class ProductsService {
+  productsSubject = new BehaviorSubject<Product[]>([]);
+  categoriesSubject = new BehaviorSubject<string[]>([]);
+
   productOld$ = new ReplaySubject<Product>(1);
   productTest$ = new Subject<Product>();
-  productsSubject = new BehaviorSubject<Product[]>([]);
+
   products$ = this.productsSubject.asObservable();
+  categories$ = this.categoriesSubject.asObservable();
 
   constructor(private http: HttpClient) {
     this.init();
@@ -32,11 +36,20 @@ export class ProductsService {
 
   getProductsByCategory(category: string) {
     return this.http.get<Product[]>(
-      `http://localhost:4010/products?category=${category}`
+      `https://fakestoreapi.com/products/category/${category}`
     );
+  }
+
+  getCategories() {
+    return this.http
+      .get<string[]>('https://fakestoreapi.com/products/categories')
+      .subscribe((categories) => {
+        this.categoriesSubject.next(categories);
+      });
   }
 
   init() {
     this.getProducts();
+    this.getCategories();
   }
 }

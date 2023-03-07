@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CartService } from 'app/features/cart/cart.service';
+import { ProductsService } from 'app/features/products/products.service';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,10 @@ import { CartService } from 'app/features/cart/cart.service';
 })
 export class HeaderComponent {
   cartItemsCount$ = this.cartService.cartTotalItems$;
+  categories$ = this.productsService.categories$;
 
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private productsService: ProductsService
+  ) {}
 }

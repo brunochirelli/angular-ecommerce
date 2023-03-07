@@ -6,5 +6,13 @@
     <li><a routerLink="/cart">Cart</a></li>
     <li><a routerLink="/authentication">Login</a></li>
   </ul>
+  <div>
+    <p>Categories</p>
+    <ul>
+      <li *ngFor="let category of categories$ | async">
+        <a routerLink="/categories/{{ category }}">{{ category }}</a>
+      </li>
+    </ul>
+  </div>
   <div>Cart total items: {{ cartItemsCount$ | async }}</div>
 </header>

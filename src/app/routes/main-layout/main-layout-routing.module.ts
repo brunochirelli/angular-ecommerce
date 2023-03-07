@@ -5,12 +5,17 @@ import { AuthenticationComponent } from '../authentication/authentication.compon
 import { CartComponent } from '../cart/cart/cart.component';
 import { HomeComponent } from '../home/home.component';
 import { ProductsComponent } from '../products/products.component';
+import { ProductsCategoryComponent } from '../products-category/products-category.component';
 import { ProductsSingleComponent } from '../products-single/products-single.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'products/:id', component: ProductsSingleComponent },
+  {
+    path: 'categories/:category',
+    component: ProductsCategoryComponent,
+  },
   { path: 'authentication', component: AuthenticationComponent },
   { path: 'cart', component: CartComponent },
 ];
