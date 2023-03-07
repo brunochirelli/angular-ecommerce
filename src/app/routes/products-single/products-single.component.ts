@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Product } from 'app/features/products/product.type';
 import { ProductsService } from 'app/features/products/products.service';
-import { Product } from 'app/features/products/types/product.type';
 
 @Component({
   templateUrl: './products-single.component.html',

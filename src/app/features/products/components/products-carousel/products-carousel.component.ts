@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { Product } from '../../types/product.type';
+import { Product } from '../../product.type';
 
 @Component({
   selector: 'app-products-carousel',

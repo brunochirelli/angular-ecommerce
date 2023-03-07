@@ -1,4 +1,11 @@
 <app-main-layout>
+  <h1>Featured product</h1>
+  <app-product-card [product]="prod$ | async"></app-product-card>
+
+  <h2>Previous product</h2>
+  <app-product-card [product]="prodOld$ | async"></app-product-card>
+  <button (click)="getNextProduct()">Get next product</button>
+
   <h1>Home</h1>
   <section>
     <h2>Featured Products</h2>

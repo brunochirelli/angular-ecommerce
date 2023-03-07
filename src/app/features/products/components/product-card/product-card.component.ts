@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { Product } from '../../types/product.type';
+import { Product } from '../../product.type';
 
 @Component({
   selector: 'app-product-card',
@@ -8,5 +8,5 @@ import { Product } from '../../types/product.type';
   styleUrls: ['./product-card.component.css'],
 })
 export class ProductCardComponent {
-  @Input() product: Product | undefined;
+  @Input() product!: Product | null;
 }
