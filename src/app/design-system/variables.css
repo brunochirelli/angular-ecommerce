@@ -6,6 +6,7 @@
   --color-primary: #4e4d93;
   --color-secondary: #05a;
   --color-error: #f00;
+  --color-lightest-gray: rgba(0, 0, 0, 0.1);
 
   /* Text */
   --text: var(--color-dark);
@@ -38,4 +39,6 @@
   /* Paddings */
   --default-padding-vertical: 1.25rem;
   --default-padding-horizontal: 1.5rem;
+  --default-padding: var(--default-padding-vertical)
+    var(--default-padding-horizontal);
 }

@@ -1,0 +1,23 @@
+.header-top {
+  display: flex;
+  padding: var(--default-padding);
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-lightest-gray);
+}
+
+.mobile-icons {
+  display: flex;
+}
+
+.mobile-icons > * {
+  margin-right: 1rem;
+}
+
+.mobile-icons *:last-of-type {
+  margin-right: 0;
+}
+
+.categories {
+  padding: var(--default-padding);
+}
