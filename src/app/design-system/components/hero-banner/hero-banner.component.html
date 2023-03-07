@@ -1,1 +1,8 @@
-<p>hero-banner works!</p>
+<section *ngIf="title">
+  <div class="banner">
+    <div>
+      <h1 class="title">{{ title }}</h1>
+      <p class="subtitle">{{ subtitle }}</p>
+    </div>
+  </div>
+</section>

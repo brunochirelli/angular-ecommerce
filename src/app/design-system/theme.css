@@ -21,8 +21,6 @@ h5,
 h6 {
   font-family: var(--font-heading);
   font-variation-settings: 'wght' var(--weight-heading);
-
-  /* font-weight: 'wght' var(--weight-heading); */
   line-height: var(--line-height-heading);
 }
 
