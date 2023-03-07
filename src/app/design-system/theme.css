@@ -4,7 +4,8 @@
   /* Colors */
   --color-dark: #000;
   --color-light: #fff;
-  --color-primary: #07c;
+  --color-primary-dark: #2a254b;
+  --color-primary: #4e4d93;
   --color-secondary: #05a;
   --color-error: #f00;
 
@@ -31,6 +32,7 @@
   /* Line Heights */
   ---line-height-body: 1.5;
   ---line-height-heading: 1.125;
+  ---line-height-heading-small: 1;
 }
 
 body {
@@ -50,4 +52,17 @@ h6 {
   font-family: var(--font-heading);
   font-weight: var(--weight-heading);
   line-height: var(--line-height-heading);
+}
+
+h1,
+h2,
+h3 {
+  line-height: var(---line-height-heading-small);
+}
+
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a {
+  text-decoration: none;
 }
