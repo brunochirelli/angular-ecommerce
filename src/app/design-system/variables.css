@@ -6,7 +6,7 @@
   --color-primary: #4e4d93;
   --color-secondary: #05a;
   --color-error: #f00;
-  --color-lightest-gray: rgba(0, 0, 0, 0.1);
+  --color-lightest-gray: rgb(0 0 0 / 10%);
 
   /* Text */
   --text: var(--color-dark);
@@ -15,11 +15,10 @@
   --secondary: var(--color-secondary);
 
   /* Fonts */
-  --font-primary: "system-ui";
+  --font-primary: "Satoshi-Regular";
   --font-secondary: "sans-serif";
   --font-display: "ClashDisplay-Semibold";
   --font-mono: "Menlo, monospace";
-
   --font-body: var(--font-primary);
   --font-heading: var(--font-display);
 
@@ -29,9 +28,9 @@
   --weight-bold: 700;
 
   /* Line Heights */
-  ---line-height-body: 1.5;
-  ---line-height-heading: 1.125;
-  ---line-height-heading-small: 1;
+  --line-height-body: 1.5;
+  --line-height-heading: 1.125;
+  --line-height-heading-small: 1;
 
   /* Layouts */
   --header-height: 4.3125rem;

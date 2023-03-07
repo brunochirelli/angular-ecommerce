@@ -29,71 +29,71 @@
 */
 
 @font-face {
-  font-family: "ClashDisplay-Variable";
+  font-display: swap;
+  font-family: ClashDisplay-Variable;
+  font-style: normal;
+  font-weight: 200 700;
   src: url("./ClashDisplay-Variable.woff2") format("woff2"),
     url("./ClashDisplay-Variable.woff") format("woff"),
     url("./ClashDisplay-Variable.ttf") format("truetype");
-  font-weight: 200 700;
-  font-display: swap;
-  font-style: normal;
 }
 
 @font-face {
-  font-family: "ClashDisplay-Extralight";
+  font-display: swap;
+  font-family: ClashDisplay-Extralight;
+  font-style: normal;
+  font-weight: 200;
   src: url("./ClashDisplay-Extralight.woff2") format("woff2"),
     url("./ClashDisplay-Extralight.woff") format("woff"),
     url("./ClashDisplay-Extralight.ttf") format("truetype");
-  font-weight: 200;
-  font-display: swap;
-  font-style: normal;
 }
 
 @font-face {
-  font-family: "ClashDisplay-Light";
+  font-display: swap;
+  font-family: ClashDisplay-Light;
+  font-style: normal;
+  font-weight: 300;
   src: url("./ClashDisplay-Light.woff2") format("woff2"),
     url("./ClashDisplay-Light.woff") format("woff"),
     url("./ClashDisplay-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-display: swap;
-  font-style: normal;
 }
 
 @font-face {
-  font-family: "ClashDisplay-Regular";
+  font-display: swap;
+  font-family: ClashDisplay-Regular;
+  font-style: normal;
+  font-weight: 400;
   src: url("./ClashDisplay-Regular.woff2") format("woff2"),
     url("./ClashDisplay-Regular.woff") format("woff"),
     url("./ClashDisplay-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal;
 }
 
 @font-face {
-  font-family: "ClashDisplay-Medium";
+  font-display: swap;
+  font-family: ClashDisplay-Medium;
+  font-style: normal;
+  font-weight: 500;
   src: url("./ClashDisplay-Medium.woff2") format("woff2"),
     url("./ClashDisplay-Medium.woff") format("woff"),
     url("./ClashDisplay-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-display: swap;
-  font-style: normal;
 }
 
 @font-face {
-  font-family: "ClashDisplay-Semibold";
+  font-display: swap;
+  font-family: ClashDisplay-Semibold;
+  font-style: normal;
+  font-weight: 600;
   src: url("./ClashDisplay-Semibold.woff2") format("woff2"),
     url("./ClashDisplay-Semibold.woff") format("woff"),
     url("./ClashDisplay-Semibold.ttf") format("truetype");
-  font-weight: 600;
-  font-display: swap;
-  font-style: normal;
 }
 
 @font-face {
-  font-family: "ClashDisplay-Bold";
+  font-display: swap;
+  font-family: ClashDisplay-Bold;
+  font-style: normal;
+  font-weight: 700;
   src: url("./ClashDisplay-Bold.woff2") format("woff2"),
     url("./ClashDisplay-Bold.woff") format("woff"),
     url("./ClashDisplay-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-display: swap;
-  font-style: normal;
 }

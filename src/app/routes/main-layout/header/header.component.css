@@ -1,9 +1,14 @@
 .header-top {
   display: flex;
-  padding: var(--default-padding);
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: var(--default-padding);
   border-bottom: 1px solid var(--color-lightest-gray);
+}
+
+.logo {
+  color: var(--color-primary);
+  font-family: var(--font-display);
 }
 
 .mobile-icons {
@@ -20,4 +25,15 @@
 
 .categories {
   padding: var(--default-padding);
+}
+
+.category-link {
+  color: var(--color-primary);
+  font-family: var(--font-primary);
+  text-decoration: none;
+}
+
+.category-link:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
 }

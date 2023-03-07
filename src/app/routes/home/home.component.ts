@@ -19,7 +19,6 @@ export class HomeComponent {
   constructor(private productsService: ProductsService) {
     this.productsService.productOld$.subscribe((product) => {
       this.productsViewed = [...this.productsViewed, product];
-      console.log(this.productsViewed);
     });
   }
 
