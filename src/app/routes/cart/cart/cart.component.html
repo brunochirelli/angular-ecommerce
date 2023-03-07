@@ -1,0 +1,20 @@
+<app-main-layout>
+  <div *ngIf="cartItems.length > 0; then hasItems; else empty"></div>
+  <ng-template #hasItems>
+    <h2>Items</h2>
+    <ul>
+      <li *ngFor="let item of cartItems">
+        <div>
+          {{ item.quantity }} {{ item.title }} - {{ item.price | currency }}
+        </div>
+        <button (click)="changeItemQuantity(item, 'add')">Add</button>
+        <button (click)="changeItemQuantity(item, 'remove')">Remove</button>
+        <button (click)="removeItem(item)">Exclude</button>
+      </li>
+    </ul>
+    <p>Total: {{ cartTotalPrice | currency }}</p>
+  </ng-template>
+  <ng-template #empty>
+    <h1>Cart is empty</h1>
+  </ng-template>
+</app-main-layout>

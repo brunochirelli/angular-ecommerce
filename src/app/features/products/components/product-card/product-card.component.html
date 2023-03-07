@@ -3,12 +3,13 @@
     <!-- <img [src]="product.image" [alt]="product.name" /> -->
   </div>
   <div>
-    <h3>
+    <h4>
       <a [routerLink]="['/products', product.id]">{{ product.title }}</a>
-    </h3>
-    <p>{{ product.description }}</p>
+    </h4>
+    <!-- <p>{{ product.description }}</p> -->
     <div>
       <span>{{ product.price | currency }}</span>
     </div>
   </div>
+  <button (click)="addToCart()">Add to cart</button>
 </div>

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { CartModule } from 'app/features/cart/cart.module';
 import { ProductsModule } from 'app/features/products/products.module';
 import { UserModule } from 'app/features/user/user.module';
 
@@ -8,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { MainLayoutRoutingModule } from './main-layout-routing.module';
 import { MainLayoutComponent } from './main-layout.component';
 import { AuthenticationComponent } from '../authentication/authentication.component';
+import { CartComponent } from '../cart/cart/cart.component';
 import { HomeComponent } from '../home/home.component';
 import { ProductsComponent } from '../products/products.component';
 import { ProductsSingleComponent } from '../products-single/products-single.component';
@@ -15,6 +17,7 @@ import { ProductsSingleComponent } from '../products-single/products-single.comp
 @NgModule({
   declarations: [
     AuthenticationComponent,
+    CartComponent,
     HeaderComponent,
     HomeComponent,
     FooterComponent,
@@ -22,7 +25,13 @@ import { ProductsSingleComponent } from '../products-single/products-single.comp
     ProductsComponent,
     ProductsSingleComponent,
   ],
-  imports: [CommonModule, MainLayoutRoutingModule, ProductsModule, UserModule],
+  imports: [
+    CommonModule,
+    MainLayoutRoutingModule,
+    ProductsModule,
+    UserModule,
+    CartModule,
+  ],
   exports: [MainLayoutComponent],
 })
 export class MainLayoutModule {}
