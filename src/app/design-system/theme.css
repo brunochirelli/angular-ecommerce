@@ -9,7 +9,7 @@ body {
   background-color: var(--background);
   color: var(--text);
   font-family: var(--font-body);
-  font-weight: var(--weight-body);
+  font-variation-settings: var(--weight-body);
   line-height: var(--line-height-body);
 }
 
@@ -20,7 +20,9 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
-  font-weight: var(--weight-heading);
+  font-variation-settings: 'wght' var(--weight-heading);
+
+  /* font-weight: 'wght' var(--weight-heading); */
   line-height: var(--line-height-heading);
 }
 

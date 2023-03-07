@@ -15,16 +15,16 @@
   --secondary: var(--color-secondary);
 
   /* Fonts */
-  --font-primary: "Satoshi-Regular";
+  --font-primary: "Satoshi-Variable";
   --font-secondary: "sans-serif";
-  --font-display: "ClashDisplay-Semibold";
+  --font-display: "ClashDisplay-Variable";
   --font-mono: "Menlo, monospace";
   --font-body: var(--font-primary);
   --font-heading: var(--font-display);
 
   /* Font Weights */
   --weight-body: 400;
-  --weight-heading: 700;
+  --weight-heading: 500;
   --weight-bold: 700;
 
   /* Line Heights */
