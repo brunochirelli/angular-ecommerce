@@ -1,38 +1,8 @@
 @import url("./fonts.css");
+@import url("./variables.css");
 
-:root {
-  /* Colors */
-  --color-dark: #000;
-  --color-light: #fff;
-  --color-primary-dark: #2a254b;
-  --color-primary: #4e4d93;
-  --color-secondary: #05a;
-  --color-error: #f00;
-
-  /* Text */
-  --text: var(--color-dark);
-  --background: var(--color-light);
-  --primary: var(--color-primary);
-  --secondary: var(--color-secondary);
-
-  /* Fonts */
-  --font-primary: "system-ui";
-  --font-secondary: "sans-serif";
-  --font-display: "ClashDisplay-Semibold";
-  --font-mono: "Menlo, monospace";
-
-  --font-body: var(--font-primary);
-  --font-heading: var(--font-display);
-
-  /* Font Weights */
-  --weight-body: 400;
-  --weight-heading: 700;
-  --weight-bold: 700;
-
-  /* Line Heights */
-  ---line-height-body: 1.5;
-  ---line-height-heading: 1.125;
-  ---line-height-heading-small: 1;
+html {
+  font-size: 16px;
 }
 
 body {
