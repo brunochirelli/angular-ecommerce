@@ -1,6 +1,6 @@
-<section class="container">
+<section class="container py-5">
   <div class="row">
-    <div class="col-12 pb-5">
+    <div class="col-12 pb-4">
       <h2 class="title">{{ title }}</h2>
     </div>
   </div>
@@ -8,5 +8,6 @@
     <div *ngFor="let product of products" class="col-6 col-md-3">
       <app-product-card [product]="product"></app-product-card>
     </div>
+    <a class="text-center py-3" routerLink="">View collection</a>
   </div>
 </section>

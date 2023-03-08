@@ -1,16 +1,18 @@
-<div class="pb-4" *ngIf="product">
-  <a [routerLink]="['/products', product.id]">
-    <div>
+<div class="pb-3 pb-lg-4" *ngIf="product">
+  <div>
+    <a [routerLink]="['/products', product.id]">
       <img [src]="product.image" [alt]="product.title" />
-    </div>
-    <div class="pt-4 pb-2 d-flex flex-column justify-content-between">
+    </a>
+  </div>
+  <div class="pt-4 pb-2 d-flex flex-column justify-content-between">
+    <a [routerLink]="['/products', product.id]">
       <h4 class="title flex-grow-1 h-100">
         {{ product.title }}
       </h4>
       <div>
         <span>{{ product.price | currency }}</span>
       </div>
-    </div>
-    <button (click)="addToCart()">Add to cart</button>
-  </a>
+    </a>
+  </div>
+  <button (click)="addToCart()">Add to cart</button>
 </div>
