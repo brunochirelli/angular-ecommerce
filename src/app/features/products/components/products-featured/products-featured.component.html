@@ -1,0 +1,12 @@
+<section class="container">
+  <div class="row">
+    <div class="col-12 pb-5">
+      <h2 class="title">{{ title }}</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngFor="let product of products" class="col-6 col-md-3">
+      <app-product-card [product]="product"></app-product-card>
+    </div>
+  </div>
+</section>

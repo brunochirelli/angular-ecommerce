@@ -1,8 +1,15 @@
-<section *ngIf="title">
-  <div class="banner">
+<section class="d-lg-flex" *ngIf="title">
+  <div class="banner d-flex flex-column justify-content-between">
     <div>
       <h1 class="title">{{ title }}</h1>
-      <p class="subtitle">{{ subtitle }}</p>
+      <button>View collection</button>
     </div>
+    <p class="subtitle">{{ subtitle }}</p>
   </div>
+  <!-- TODO: Optimize image loading -->
+  <img
+    class="d-none d-lg-flex"
+    src="assets/hero-banner.png"
+    alt="Hero banner"
+  />
 </section>

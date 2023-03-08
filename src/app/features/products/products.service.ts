@@ -23,7 +23,7 @@ export class ProductsService {
 
   getProducts() {
     return this.http
-      .get<Product[]>('https://fakestoreapi.com/products')
+      .get<Product[]>('http://localhost:4010/products')
       .subscribe((products) => {
         this.productTest$.next(products[0]);
         this.productsSubject.next(products);

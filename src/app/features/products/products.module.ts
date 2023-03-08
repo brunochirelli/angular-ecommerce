@@ -4,8 +4,13 @@ import { RouterModule } from '@angular/router';
 
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductsCarouselComponent } from './components/products-carousel/products-carousel.component';
+import { ProductsFeaturedComponent } from './components/products-featured/products-featured.component';
 
-const components = [ProductCardComponent, ProductsCarouselComponent];
+const components = [
+  ProductCardComponent,
+  ProductsCarouselComponent,
+  ProductsFeaturedComponent,
+];
 
 @NgModule({
   declarations: [...components],

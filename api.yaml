@@ -1,9 +1,4 @@
 openapi: 3.0.0
-x-json-schema-faker:
-  useExamplesValue: true
-  useDefaultValue: true
-  optionalsProbability: 0.5
-  min-items: 20
 info:
   title: Small Ecommerce API
   version: 1.0.0
@@ -28,21 +23,25 @@ paths:
                 products:
                   value:
                     - id: 1
-                      name: Product 1
-                      x-faker: name.firstName
+                      title: The Dandy chair
                       description: Description of product 1
-                      price: 10.99
-                      image: http://example.com/product1.jpg
+                      price: 250
+                      image: assets/hero-banner.png
                     - id: 2
-                      name: Product 2
+                      title: Rustic Vase Set
                       description: Description of product 2
-                      price: 9.99
-                      image: http://example.com/product2.jpg
+                      price: 155
+                      image: assets/rustic-vase-set.png
                     - id: 3
-                      name: Product 3
+                      title: The Silky Vase
                       description: Description of product 3
-                      price: 14.99
-                      image: http://example.com/product3.jpg
+                      price: 125
+                      image: assets/silky-vase.png
+                    - id: 4
+                      title: The Lucy Lamp
+                      description: Description of product 3
+                      price: 399
+                      image: assets/lucy-lamp.png
     post:
       summary: Add a new product
       description: Adds a new product to the ecommerce system
@@ -192,11 +191,9 @@ components:
       properties:
         id:
           type: integer
-          x-faker: datatype.bigInt
           description: Unique identifier for the product
-        name:
+        title:
           type: string
-          x-faker: commerce.product
           description: Name of the product
         slug:
           type: string
@@ -206,17 +203,13 @@ components:
           description: Description of the product
         price:
           type: number
-          x-faker:
-            commerce.price: [0, 10]
           format: float
           description: Price of the product
         image:
           type: string
-          x-faker: image.imageUrl
-          format: uri
           description: URL to the product image
       required:
-        - name
+        - title
         - price
     CartItem:
       type: object

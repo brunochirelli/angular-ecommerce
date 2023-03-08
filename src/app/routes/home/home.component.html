@@ -6,7 +6,11 @@
     using modern web technologies."
   ></app-hero-banner>
 
-  <h1>Featured product</h1>
+  <app-products-featured
+    [products]="products$ | async"
+    title="New ceramics"
+  ></app-products-featured>
+
   <app-product-card [product]="prod$ | async"></app-product-card>
 
   <h2>Previous product</h2>

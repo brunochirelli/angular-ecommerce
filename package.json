@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently 'prism mock ./api.yaml -d' 'ng serve'",
+    "start": "concurrently 'prism mock ./api.yaml' 'ng serve'",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "stylelint '**/**/*.css' --fix && ng lint --fix"
+    "lint": "stylelint '**/**/*.css' --fix && ng lint --fix",
+    "mock": "prism mock ./api.yaml"
   },
   "private": true,
   "dependencies": {
