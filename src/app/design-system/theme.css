@@ -36,3 +36,91 @@ h3 > a,
 h4 > a {
   text-decoration: none;
 }
+
+/** CUSTOM **/
+
+/* Background */
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-primary-dark {
+  background-color: var(--color-primary-dark);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.bg-error {
+  background-color: var(--color-error);
+}
+
+/* Texts */
+.text-light {
+  color: var(--color-light);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-primary-dark {
+  color: var(--color-primary-dark);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-error {
+  color: var(--color-error);
+}
+
+/* Borders */
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.border-primary-dark {
+  border-color: var(--color-primary-dark);
+}
+
+.border-secondary {
+  border-color: var(--color-secondary);
+}
+
+.border-error {
+  border-color: var(--color-error);
+}
+
+/* Fonts */
+.font-primary {
+  font-family: var(--font-primary);
+}
+
+.font-secondary {
+  font-family: var(--font-secondary);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Font Weights */
+.font-weight-body {
+  font-variation-settings: 'wght' var(--weight-body);
+}
+
+.font-weight-heading {
+  font-variation-settings: 'wght' var(--weight-heading);
+}
+
+.font-weight-bold {
+  font-variation-settings: 'wght' var(--weight-bold);
+}
