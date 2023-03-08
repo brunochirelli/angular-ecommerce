@@ -1,10 +1,10 @@
-<section class="d-lg-flex" *ngIf="title">
-  <div class="banner d-flex flex-column justify-content-between">
+<section class="container d-lg-flex mx-auto mb-5" *ngIf="title">
+  <div class="bg-primary-dark d-flex flex-column justify-content-between p-5">
     <div>
-      <h1 class="title">{{ title }}</h1>
+      <h1 class="title pb-4">{{ title }}</h1>
       <button>View collection</button>
     </div>
-    <p class="subtitle">{{ subtitle }}</p>
+    <p class="subtitle pt-5">{{ subtitle }}</p>
   </div>
   <!-- TODO: Optimize image loading -->
   <img
