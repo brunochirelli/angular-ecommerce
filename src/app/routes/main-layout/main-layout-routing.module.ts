@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthenticationComponent } from '../authentication/authentication.component';
 import { CartComponent } from '../cart/cart/cart.component';
 import { HomeComponent } from '../home/home.component';
+import { Page404Component } from '../page404/page404.component';
 import { ProductsComponent } from '../products/products.component';
 import { ProductsCategoryComponent } from '../products-category/products-category.component';
 import { ProductsSingleComponent } from '../products-single/products-single.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
   },
   { path: 'authentication', component: AuthenticationComponent },
   { path: 'cart', component: CartComponent },
+  { path: '**', component: Page404Component },
 ];
 
 @NgModule({

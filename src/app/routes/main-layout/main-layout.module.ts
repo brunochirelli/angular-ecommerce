@@ -12,21 +12,27 @@ import { MainLayoutComponent } from './main-layout.component';
 import { AuthenticationComponent } from '../authentication/authentication.component';
 import { CartComponent } from '../cart/cart/cart.component';
 import { HomeComponent } from '../home/home.component';
+import { Page404Component } from '../page404/page404.component';
 import { ProductsComponent } from '../products/products.component';
 import { ProductsCategoryComponent } from '../products-category/products-category.component';
 import { ProductsSingleComponent } from '../products-single/products-single.component';
 
+const pages = [
+  AuthenticationComponent,
+  HomeComponent,
+  ProductsComponent,
+  ProductsSingleComponent,
+  ProductsCategoryComponent,
+  CartComponent,
+  Page404Component,
+];
+
 @NgModule({
   declarations: [
-    AuthenticationComponent,
-    CartComponent,
     HeaderComponent,
-    HomeComponent,
     FooterComponent,
     MainLayoutComponent,
-    ProductsComponent,
-    ProductsSingleComponent,
-    ProductsCategoryComponent,
+    ...pages,
   ],
   imports: [
     DesignSystemModule,

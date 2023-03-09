@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Product } from 'app/features/products/product.type';
 import { ProductsService } from 'app/features/products/products.service';
@@ -23,8 +23,12 @@ export class ProductsCategoryComponent {
             this.activatedRoute.snapshot.params['category']
           )
           .subscribe((products) => {
-            this.categoryProducts = products;
-            this.categoryName = products[0].category;
+            if (products.length > 0) {
+              this.categoryProducts = products;
+              this.categoryName = products[0].category;
+            } else {
+              this.router.navigate(['/404']);
+            }
           });
       }
     });
