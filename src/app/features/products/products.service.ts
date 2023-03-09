@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, map } from 'rxjs';
 
 import { Product } from './product.type';
 
@@ -10,9 +10,6 @@ import { Product } from './product.type';
 export class ProductsService {
   productsSubject = new BehaviorSubject<Product[]>([]);
   categoriesSubject = new BehaviorSubject<string[]>([]);
-
-  productOld$ = new ReplaySubject<Product>(1);
-
   products$ = this.productsSubject.asObservable();
   categories$ = this.categoriesSubject.asObservable();
 
@@ -21,11 +18,12 @@ export class ProductsService {
   }
 
   getProducts() {
-    return this.http
-      .get<Product[]>('http://localhost:4010/products')
-      .subscribe((products) => {
+    return this.http.get<Product[]>('http://localhost:4010/products').pipe(
+      map((products) => {
         this.productsSubject.next(products);
-      });
+        return products;
+      })
+    );
   }
 
   getProductById(id: number) {

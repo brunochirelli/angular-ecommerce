@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Product } from 'app/features/products/product.type';
-import { ProductsService } from 'app/features/products/products.service';
-import { map, Observable } from 'rxjs';
 
 @Component({
   templateUrl: './home.component.html',
@@ -10,16 +9,11 @@ import { map, Observable } from 'rxjs';
 export class HomeComponent implements OnInit {
   productsViewed: Product[] = [];
   count = 0;
-  prodOld$: Observable<Product> = this.productsService.productOld$;
-  products$: Observable<Product[]> = this.productsService.products$.pipe(
-    map((products: Product[]) => products.slice(0, 4))
-  );
+  products!: Product[];
 
-  constructor(private productsService: ProductsService) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.productsService.productOld$.subscribe((product) => {
-      this.productsViewed = [...this.productsViewed, product];
-    });
+    this.products = this.route.snapshot.data['products'];
   }
 }

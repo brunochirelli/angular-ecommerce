@@ -7,19 +7,7 @@
   ></app-hero-banner>
 
   <app-products-featured
-    [products]="products$ | async"
+    [products]="products"
     title="New ceramics"
   ></app-products-featured>
-
-  <!-- <h2>Previous product</h2>
-  <app-product-card [product]="prodOld$ | async"></app-product-card>
-  <button (click)="getNextProduct()">Get next product</button>
-
-  <h1>Home</h1>
-  <section>
-    <h2>Featured Products</h2>
-    <app-products-carousel
-      [products]="products$ | async"
-    ></app-products-carousel>
-  </section> -->
 </app-main-layout>

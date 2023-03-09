@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CartGuard } from 'app/features/cart/cart.guard';
 import { CategoryResolver } from 'app/features/products/category.resolver';
 import { ProductResolver } from 'app/features/products/product.resolver';
+import { ProductsResolver } from 'app/features/products/products.resolver';
 import { UserGuard } from 'app/features/user/user.guard';
 
 import { AuthenticationComponent } from '../authentication/authentication.component';
@@ -14,7 +15,11 @@ import { ProductsCategoryComponent } from '../products-category/products-categor
 import { ProductsSingleComponent } from '../products-single/products-single.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  {
+    path: '',
+    component: HomeComponent,
+    resolve: { products: ProductsResolver },
+  },
   {
     path: 'products',
     component: ProductsComponent,
