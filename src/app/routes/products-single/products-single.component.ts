@@ -26,11 +26,8 @@ export class ProductsSingleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.productsService
-      .getProductById(this.route.snapshot.params['id'])
-      .subscribe((product) => {
-        this.currentProduct = product;
-      });
+    // Coming from ProductResolver
+    this.currentProduct = this.route.snapshot.data['product'];
   }
 
   addToCart(): void {
