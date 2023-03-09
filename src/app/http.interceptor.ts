@@ -6,7 +6,7 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { catchError, Observable } from 'rxjs';
 
 @Injectable()
 export class HttpRequestsInterceptor implements HttpInterceptor {
@@ -16,14 +16,20 @@ export class HttpRequestsInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    next.handle(request).subscribe({
-      // next: (response) => {},
-      error: (err) => {
-        if (err.status === '500') {
+    // Avoid using subscriber to not trigger request twice
+    next.handle(request).pipe(
+      catchError((err) => {
+        if (err.status === 401) {
+          this.router.navigate(['/login']);
+        }
+
+        if (err.status === 500) {
           this.router.navigate(['/500']);
         }
-      },
-    });
+
+        throw err;
+      })
+    );
 
     return next.handle(request);
   }
