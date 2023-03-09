@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from 'app/features/products/product.type';
 import { ProductsService } from 'app/features/products/products.service';
 import { map, Observable } from 'rxjs';
@@ -7,7 +7,7 @@ import { map, Observable } from 'rxjs';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   productsViewed: Product[] = [];
   count = 0;
   prod$: Observable<Product> = this.productsService.productTest$;
@@ -16,7 +16,9 @@ export class HomeComponent {
     map((products: Product[]) => products.slice(0, 4))
   );
 
-  constructor(private productsService: ProductsService) {
+  constructor(private productsService: ProductsService) {}
+
+  ngOnInit(): void {
     this.productsService.productOld$.subscribe((product) => {
       this.productsViewed = [...this.productsViewed, product];
     });

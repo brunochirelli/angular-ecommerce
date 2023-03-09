@@ -10,8 +10,11 @@ import { ProductsSingleComponent } from '../products-single/products-single.comp
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'products', component: ProductsComponent },
-  { path: 'products/:id', component: ProductsSingleComponent },
+  {
+    path: 'products',
+    component: ProductsComponent,
+    children: [{ path: ':id', component: ProductsSingleComponent }],
+  },
   {
     path: 'categories/:category',
     component: ProductsCategoryComponent,
