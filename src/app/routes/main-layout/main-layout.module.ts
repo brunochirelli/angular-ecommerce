@@ -2,9 +2,9 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { DesignSystemModule } from 'app/design-system/design-system.module';
 import { CartModule } from 'app/features/cart/cart.module';
-import { CategoryResolver } from 'app/features/products/category.resolver';
-import { ProductResolver } from 'app/features/products/product.resolver';
 import { ProductsModule } from 'app/features/products/products.module';
+import { CategoryResolver } from 'app/features/products/resolvers/category.resolver';
+import { ProductResolver } from 'app/features/products/resolvers/product.resolver';
 import { UserModule } from 'app/features/user/user.module';
 
 import { FooterComponent } from './footer/footer.component';

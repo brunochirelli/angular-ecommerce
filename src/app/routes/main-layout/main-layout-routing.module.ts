@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CartGuard } from 'app/features/cart/cart.guard';
-import { CategoryResolver } from 'app/features/products/category.resolver';
-import { ProductResolver } from 'app/features/products/product.resolver';
-import { ProductsResolver } from 'app/features/products/products.resolver';
+import { CategoryResolver } from 'app/features/products/resolvers/category.resolver';
+import { ProductResolver } from 'app/features/products/resolvers/product.resolver';
+import { ProductsResolver } from 'app/features/products/resolvers/products.resolver';
 import { UserGuard } from 'app/features/user/user.guard';
 
 import { AuthenticationComponent } from '../authentication/authentication.component';
