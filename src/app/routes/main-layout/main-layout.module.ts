@@ -2,6 +2,8 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { DesignSystemModule } from 'app/design-system/design-system.module';
 import { CartModule } from 'app/features/cart/cart.module';
+import { CategoryResolver } from 'app/features/products/category.resolver';
+import { ProductResolver } from 'app/features/products/product.resolver';
 import { ProductsModule } from 'app/features/products/products.module';
 import { UserModule } from 'app/features/user/user.module';
 
@@ -13,6 +15,7 @@ import { AuthenticationComponent } from '../authentication/authentication.compon
 import { CartComponent } from '../cart/cart/cart.component';
 import { HomeComponent } from '../home/home.component';
 import { Page404Component } from '../page404/page404.component';
+import { Page500Component } from '../page500/page500.component';
 import { ProductsComponent } from '../products/products.component';
 import { ProductsCategoryComponent } from '../products-category/products-category.component';
 import { ProductsSingleComponent } from '../products-single/products-single.component';
@@ -25,6 +28,7 @@ const pages = [
   ProductsCategoryComponent,
   CartComponent,
   Page404Component,
+  Page500Component,
 ];
 
 @NgModule({
@@ -44,5 +48,6 @@ const pages = [
     NgOptimizedImage,
   ],
   exports: [MainLayoutComponent],
+  providers: [ProductResolver, CategoryResolver],
 })
 export class MainLayoutModule {}

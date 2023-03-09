@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CartGuard } from 'app/features/cart/cart.guard';
+import { CategoryResolver } from 'app/features/products/category.resolver';
+import { ProductResolver } from 'app/features/products/product.resolver';
+import { UserGuard } from 'app/features/user/user.guard';
 
 import { AuthenticationComponent } from '../authentication/authentication.component';
 import { CartComponent } from '../cart/cart/cart.component';
@@ -14,14 +18,28 @@ const routes: Routes = [
   {
     path: 'products',
     component: ProductsComponent,
-    children: [{ path: ':id', component: ProductsSingleComponent }],
+  },
+  {
+    path: 'products/:id',
+    component: ProductsSingleComponent,
+    resolve: {
+      product: ProductResolver,
+    },
   },
   {
     path: 'categories/:category',
     component: ProductsCategoryComponent,
+    resolve: {
+      products: CategoryResolver,
+    },
   },
   { path: 'authentication', component: AuthenticationComponent },
-  { path: 'cart', component: CartComponent },
+  {
+    path: 'cart',
+    component: CartComponent,
+    canActivate: [UserGuard],
+    canDeactivate: [CartGuard],
+  },
   { path: '**', component: Page404Component },
 ];
 
