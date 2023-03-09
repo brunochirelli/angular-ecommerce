@@ -3,7 +3,14 @@
     <a routerLink="" class="logo d-block">Avion</a>
     <div class="d-flex">
       <div class="ps-3">lupa</div>
-      <div class="ps-3">cart</div>
+      <div class="ps-3">
+        <a routerLink="/cart">
+          cart
+          <span class="cart-items-count">
+            {{ cartItemsCount$ | async }}
+          </span>
+        </a>
+      </div>
       <div class="ps-3">profile</div>
       <div class="d-sm-none ps-3">menu</div>
     </div>
