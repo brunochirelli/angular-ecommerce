@@ -77,6 +77,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Product'
+              examples:
+                product:
+                  value:
+                    id: 1
+                    title: The Dandy chair
+                    description: Description of product 1
+                    price: 250
+                    image: assets/hero-banner.png
+                  
         '404':
           description: Product not found
       
