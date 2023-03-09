@@ -80,7 +80,6 @@ export class CartService {
   }
 
   changeItemQuantity(product: Product, quantity: 'add' | 'remove') {
-    // Store the current value of the cart
     const cart = this.cartSubject.getValue();
 
     // Find the product to be updated
@@ -104,7 +103,7 @@ export class CartService {
     }
 
     // Update the cartSubject with new cart state
-    // Will notify every subscriber
+    // which will notify every subscriber
     this.cartSubject.next({
       ...cart,
     });
